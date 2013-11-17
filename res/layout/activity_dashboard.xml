@@ -10,10 +10,20 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Dashboard" >
 
+    <EditText
+        android:id="@+id/Group_Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="Group Name"
+        android:textColor="@color/White" />
+    
     <Button
         android:id="@+id/Join_Button"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/Group_Name"
         android:layout_marginTop="20dp"
         android:background="@color/pressed_partypal"
         android:onClick="join_group"
@@ -30,5 +40,7 @@
         android:background="@color/pressed_partypal"
         android:onClick="create_group"
         android:text="@string/start_group" />
+
+    
 
 </RelativeLayout>

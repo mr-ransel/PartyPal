@@ -32,6 +32,8 @@ public class Group_Viewer extends Activity {
 	public String name;
 	public String number;
 	public ArrayList<String> groups;
+	public int groupindex;
+	public JSONArray status;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +63,7 @@ public class Group_Viewer extends Activity {
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
-		
+		groupindex = 0;
 		
 	}
 
@@ -72,15 +74,14 @@ public class Group_Viewer extends Activity {
 		return true;
 	}
 
-	
 	class QueryTask extends AsyncTask<String, String, String>{
 	    @Override
-	    protected String doInBackground(String... uri) {
+	    protected String doInBackground(String... index) {
 	    	
 	    	JSONObject data = new JSONObject();
 	    	try {
-	    		data.put("action","get_group");
-				data.put("phonenumber", number);
+	    		data.put("action","get_group_status");
+				data.put("groupphrase",groups.get(groupindex));
 			} catch (JSONException e1) {
 				e1.printStackTrace();
 			}
@@ -123,19 +124,15 @@ public class Group_Viewer extends Activity {
 	    @Override
 	    protected void onPostExecute(String result) {
 	    	
-	    	SharedPreferences settings = getPreferences(0);
-	    	settings.edit().putString("groups", result);
-	    	int length;
+	    	
 	    	try {
-				JSONArray json = new JSONArray(result);
-				Log.v("json",json.length()+"");
-				length = json.length();
+				status = new JSONArray(result);
+				Log.v("json",status.length()+"");
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}
 	    	
 	    	
-	    	jump_to_viewer();
 	    	
 	        super.onPostExecute(result);
 	        //Do anything with response..
