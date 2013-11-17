@@ -1,0 +1,7 @@
+
+    <resources>
+        <color name="Black">#000</color>
+        <color name="DarkGray">#454545</color>
+        <color name="DarkerGray">#252525</color>
+        <color name="White">#FFF</color>
+    </resources>
