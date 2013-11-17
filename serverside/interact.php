@@ -106,8 +106,7 @@ switch ($obj['action']) {
 				echo json_encode($output);
 			}
 			
-			shell_exec("curl -X POST 'https://api.twilio.com/2010-04-01/Accounts/ACe2175b27304e434936aecb0a0df846ac/SMS/Messages.json' -d 'From=9199487191' -d 'To=".$phonenumber."' -d 'Body=PartyPal%3A+Please+check+in+now' -u ACe2175b27304e434936aecb0a0df846ac:540122caef6df665022c6ff467d36467 | at now + 1 hour");
-			
+			shell_exec("echo curl -X POST 'https://api.twilio.com/2010-04-01/Accounts/ACe2175b27304e434936aecb0a0df846ac/SMS/Messages.json' -d 'From=9199487191' -d 'To=".$phonenumber."' -d 'Body=PartyPal%3A+Please+check+in+now' -u ACe2175b27304e434936aecb0a0df846ac:540122caef6df665022c6ff467d36467 | at now + 1 hour");
 			exit();
 		case 'add_groupmember':
 			$phrase = $obj['groupphrase'];
