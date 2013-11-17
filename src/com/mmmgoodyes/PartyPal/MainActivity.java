@@ -2,6 +2,7 @@ package com.mmmgoodyes.PartyPal;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.Menu;
 import android.view.View;
@@ -27,6 +28,9 @@ public class MainActivity extends Activity {
 
 		Button mButton=(Button)findViewById(R.id.start_button);
 		mButton.setBackgroundColor(Color.parseColor("#454545")); // custom color
+		
+		Intent intent = new Intent(this,Dashboard.class);
+		startActivity(intent);
 	}
 
 }
