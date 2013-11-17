@@ -13,6 +13,6 @@
     <string name="title_activity_join__group">Join_Group</string>
     <string name="title_activity_create__group">Create_Group</string>
     <string name="request_URL">http://colab-sbx-25.oit.duke.edu/interact.php</string>
-    <string name="title_activity_group__viewer">Group_Viewer</string>
+    <string name="title_activity_group__viewer">PartyPal</string>
 
 </resources>
