@@ -37,6 +37,7 @@ public class Group_Viewer extends Activity {
 	public ArrayList<String> groups;
 	public int groupindex;
 	public JSONArray status;
+	public CountDownTimer C;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -416,12 +417,13 @@ public class Group_Viewer extends Activity {
 	
 	public void check_in(View view) {
 		new CheckInTask().execute("");
-		new CountDownTimer(360000, 1000) {
+		if (C!=null) {C.cancel();}
+		C = new CountDownTimer(3600000, 1000) {
 
 		     public void onTick(long millisUntilFinished) {
 		 		TextView t = (TextView)findViewById(R.id.CountDown);
 
-		         t.setText(millisUntilFinished / 60000 + ":" + (millisUntilFinished / 1000 - 60000*(millisUntilFinished/60000)) );
+		         t.setText(millisUntilFinished / 60000 + ":" + (millisUntilFinished / 1000 - millisUntilFinished%60000));
 		     }
 
 		     public void onFinish() {

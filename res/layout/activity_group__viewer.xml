@@ -123,7 +123,7 @@
         android:layout_below="@+id/CountDown"
         android:background="@color/pressed_partypal"
         android:gravity="center"
-        android:text="Since Last Check-In"
+        android:text="Until Next Check-In"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="15sp" />
 
