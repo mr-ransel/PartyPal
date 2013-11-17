@@ -1,0 +1,24 @@
+<form name="newUser" action="interact.php" method="POST" enctype='multipart/form-data'>
+JSON Data: <input class="text" type="text" name="json" placeholder="Formatted JSON" autocapitalize="none" autocorrect="off"><br>
+<input class="call" type="submit" name="submit" value="submit">
+</form>
+New User:<br>
+{"action":"add_user","fname":"Robert","phonenumber":"3618166354","gps":"35.999136 -78.939796"}
+<br><br>
+Check In:<br>
+{"action":"check_in","phonenumber":"3618166354","gps":"35.999136 -78.939786"}
+<br><br>
+New Group Members:<br>
+{"action":"add_groupmember","phonenumbers":["3618166354","9416856455"],"groupphrase":"superdog on a stick"}
+<br><br>
+Remove Group Members:<br>
+{"action":"remove_groupmember","phonenumbers":["3618166354"],"groupphrase":"superdog on a stick"}
+<br><br>
+Check out for night:<br>
+{"action":"remove_groupmember","phonenumbers":["3618166354"],"groupphrase":"*"}
+<br><br>
+Query for group status:<br>
+{"action":"get_group_status","groupphrase":"superdog on a stick"} 
+<br><br>
+Query for group names:<br>
+{"action":"get_group","phonenumber":"3618166354"} 
