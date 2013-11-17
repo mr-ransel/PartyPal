@@ -7,9 +7,9 @@
     <uses-sdk
         android:minSdkVersion="13"
         android:targetSdkVersion="18" />
-	
-	<uses-permission android:name="android.permission.INTERNET" />
-    
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -43,6 +43,10 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.mmmgoodyes.PartyPal.Dashboard" />
+        </activity>
+        <activity
+            android:name="com.mmmgoodyes.PartyPal.Group_Viewer"
+            android:label="@string/title_activity_group__viewer" >
         </activity>
     </application>
 
