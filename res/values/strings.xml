@@ -8,5 +8,9 @@
     <string name="intro_buttontext">Let\'s get started!</string>
     <string name="title_activity_main_menu">MainMenu</string>
     <string name="title_activity_dashboard">Dashboard</string>
-
+    <string name="join_group">Join a group</string>
+    <string name="start_group">Start your own group</string>
+    <string name="title_activity_join__group">Join_Group</string>
+    <string name="title_activity_create__group">Create_Group</string>
+	<string name="request_URL">http://colab-sbx-25.oit.duke.edu/interact.php</string>
 </resources>
