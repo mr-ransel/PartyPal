@@ -67,14 +67,5 @@
         android:text="@string/intro_buttontext"
         android:textColor="@color/White"
         android:textSize="30sp" />
-
-    <QuickContactBadge
-        android:id="@+id/quickContactBadge1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/start_button"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="19dp"
-        android:layout_marginLeft="107dp" />
     
 </RelativeLayout>

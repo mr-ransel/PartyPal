@@ -9,65 +9,115 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Group_Viewer" >
 
-    <Spinner
-        android:id="@+id/Group_List"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
-        android:background="@color/White" />
-
     <Button
         android:id="@+id/Check_Out"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/Group_List"
-        android:layout_below="@+id/Group_List"
-        android:layout_marginTop="33dp"
+        android:layout_below="@+id/CountDown"
+        android:layout_marginTop="15dp"
+        android:background="#CC1122"
+        android:padding="20dp"
         android:text="Check Out" />
 
     <Button
         android:id="@+id/Check_In"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/Check_Out"
         android:layout_alignBottom="@+id/Check_Out"
         android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/Check_Out"
         android:layout_toRightOf="@+id/Check_Out"
+        android:background="#00BB22"
         android:text="Check In" />
 
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Check_In"
+        android:layout_below="@+id/Missing_title"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="23dp" >
+        android:layout_marginTop="15dp" >
 
         <TableRow
             android:id="@+id/tableRow1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Check Out" >
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tableRow2"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
-        </TableRow>
 
-        <TableRow
-            android:id="@+id/tableRow3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tableRow4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Robert Ansel" />
         </TableRow>
     </TableLayout>
+
+    <TextView
+        android:id="@+id/Missing_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Check_Out"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="Members Missing"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Spinner
+        android:id="@+id/Group_List"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/pressed_partypal" />
+
+    <Button
+        android:id="@+id/Add_Member"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Group_List"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:background="@color/pressed_partypal"
+        android:text="Add New Group Member" />
+
+    <TextView
+        android:id="@+id/CountDown"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Add_Member"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:background="@color/pressed_partypal"
+        android:gravity="center"
+        android:text="00:00"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="50sp" />
+
+    <TextView
+        android:id="@+id/Time_Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/CountDown"
+        android:layout_alignRight="@+id/Check_In"
+        android:layout_alignTop="@+id/CountDown"
+        android:layout_toRightOf="@id/CountDown"
+        android:background="@color/White"
+        android:gravity="center"
+        android:text="Since Last Check-In"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="15sp" />
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Add_Member"
+        android:layout_alignTop="@+id/CountDown" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Add_Member"
+        android:layout_alignTop="@+id/CountDown"
+        android:background="@color/pressed_partypal" />
 
 </RelativeLayout>
