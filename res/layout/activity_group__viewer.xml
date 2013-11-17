@@ -10,17 +10,6 @@
     tools:context=".Group_Viewer" >
 
     <Button
-        android:id="@+id/Check_Out"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/Group_List"
-        android:layout_below="@+id/CountDown"
-        android:layout_marginTop="15dp"
-        android:background="#CC1122"
-        android:padding="20dp"
-        android:text="Check Out" />
-
-    <Button
         android:id="@+id/Check_In"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,14 +21,37 @@
         android:text="Check In" />
 
     <TableLayout
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Missing_title"
+        android:layout_below="@+id/Check_Out"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp" >
+        android:layout_marginTop="15dp"
+        android:background="@color/DarkerGray"
+        android:gravity="center_horizontal"
+        android:padding="5dp" >
 
         <TableRow
             android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textAlignment="center" >
+
+            <TextView
+                android:id="@+id/Missing_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="Members Missing"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/White" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
 
@@ -47,37 +59,11 @@
                 android:id="@+id/textView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Robert Ansel" />
+                android:text="Robert Ansel"
+                android:textColor="#DDDDDD" />
+
         </TableRow>
     </TableLayout>
-
-    <TextView
-        android:id="@+id/Missing_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Check_Out"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:text="Members Missing"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <Spinner
-        android:id="@+id/Group_List"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:background="@color/pressed_partypal" />
-
-    <Button
-        android:id="@+id/Add_Member"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/Group_List"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:background="@color/pressed_partypal"
-        android:text="Add New Group Member" />
 
     <TextView
         android:id="@+id/CountDown"
@@ -92,25 +78,48 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="50sp" />
 
-
+    <Button
+        android:id="@+id/Add_Member"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/CountDown"
+        android:layout_below="@+id/GroupList"
+        android:layout_margin="15dp"
+        android:background="@color/pressed_partypal"
+        android:text="Add New Group Member" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/GroupList"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/DarkerGray"
+        android:padding="5dp"
+        android:text="Group Names"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/White" />
+
+    <Button
+        android:id="@+id/Check_Out"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/Add_Member"
-        android:layout_alignTop="@+id/CountDown"
-        android:background="@color/pressed_partypal" />
+        android:layout_alignLeft="@+id/CountDown"
+        android:layout_below="@+id/CountDown"
+        android:layout_marginTop="18dp"
+        android:layout_toLeftOf="@+id/tableLayout1"
+        android:background="#CC1122"
+        android:padding="20dp"
+        android:text="Check Out" />
 
     <TextView
         android:id="@+id/Time_Label"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/CountDown"
-        android:layout_alignRight="@+id/CountDown"
-        android:layout_below="@+id/space1"
-        android:layout_toRightOf="@+id/tableLayout1"
-        android:background="@color/White"
+        android:layout_alignLeft="@+id/CountDown"
+        android:layout_below="@+id/CountDown"
+        android:background="@color/pressed_partypal"
         android:gravity="center"
         android:text="Since Last Check-In"
         android:textAppearance="?android:attr/textAppearanceLarge"
