@@ -4,5 +4,7 @@
     <string name="app_name">PartyPal</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="intro_text">Welcome to PartyPal! This app has everything you need to have a fun, safe night out! You can join groups that keep track of how you\'re doing and tell your buddies if you need help. Have a wild night, but stay safe!</string>
+    <string name="intro_buttontext">Let\'s get started!</string>
 
 </resources>
