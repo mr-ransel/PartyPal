@@ -28,6 +28,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.text.Editable;
 import android.util.Log;
@@ -47,6 +48,16 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		number = "";
 		name = "";
+		SharedPreferences settings = getPreferences(0);
+		settings.getString("name","");
+		settings.getString("number","");
+		if (number!="" && name!="") {
+			Intent intent = new Intent(this,Dashboard.class);
+			intent.putExtra("number", number);
+			intent.putExtra("name", name);
+			startActivity(intent);
+		}
+		
 	}
 
 	@Override
@@ -61,33 +72,11 @@ public class MainActivity extends Activity {
 
 		Button mButton=(Button)findViewById(R.id.start_button);
 		mButton.setBackgroundColor(Color.parseColor("#454545")); // custom color
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
 		
 		
 		
 		Intent intent = new Intent(this,Dashboard.class);
-
-		
-		
-		
-				
-				
-				
-							
-
-
-			
-		
-		
 	
 		number = ((EditText)findViewById(R.id.Number)).getText().toString();
 		name = ((EditText)findViewById(R.id.Name)).getText().toString();
