@@ -71,16 +71,18 @@ public final class R {
         public static final int Group_Name=0x7f090000;
         public static final int Join_Button=0x7f090001;
         public static final int Missing_title=0x7f090007;
-        public static final int Name=0x7f09000e;
-        public static final int Number=0x7f09000f;
+        public static final int Name=0x7f090010;
+        public static final int Number=0x7f090011;
         public static final int Start_Button=0x7f090002;
-        public static final int Time_Label=0x7f09000b;
-        public static final int action_settings=0x7f090011;
-        public static final int intro_text=0x7f09000d;
-        public static final int start_button=0x7f090010;
+        public static final int Time_Label=0x7f09000c;
+        public static final int action_settings=0x7f090013;
+        public static final int intro_text=0x7f09000f;
+        public static final int space1=0x7f09000d;
+        public static final int start_button=0x7f090012;
+        public static final int tableLayout1=0x7f09000e;
         public static final int tableRow1=0x7f090008;
         public static final int textView1=0x7f090009;
-        public static final int textView2=0x7f09000c;
+        public static final int textView2=0x7f09000b;
     }
     public static final class layout {
         public static final int activity_create__group=0x7f030000;

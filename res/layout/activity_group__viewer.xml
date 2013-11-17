@@ -92,25 +92,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="50sp" />
 
-    <TextView
-        android:id="@+id/Time_Label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/CountDown"
-        android:layout_alignRight="@+id/Check_In"
-        android:layout_alignTop="@+id/CountDown"
-        android:layout_toRightOf="@id/CountDown"
-        android:background="@color/White"
-        android:gravity="center"
-        android:text="Since Last Check-In"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="15sp" />
 
-    <Space
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/Add_Member"
-        android:layout_alignTop="@+id/CountDown" />
 
     <TextView
         android:id="@+id/textView2"
@@ -119,5 +101,19 @@
         android:layout_alignLeft="@+id/Add_Member"
         android:layout_alignTop="@+id/CountDown"
         android:background="@color/pressed_partypal" />
+
+    <TextView
+        android:id="@+id/Time_Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/CountDown"
+        android:layout_alignRight="@+id/CountDown"
+        android:layout_below="@+id/space1"
+        android:layout_toRightOf="@+id/tableLayout1"
+        android:background="@color/White"
+        android:gravity="center"
+        android:text="Since Last Check-In"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="15sp" />
 
 </RelativeLayout>

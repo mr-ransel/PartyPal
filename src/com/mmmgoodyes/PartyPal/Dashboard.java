@@ -112,9 +112,9 @@ public class Dashboard extends Activity {
 	    protected void onPostExecute(String result) {
 	    	
 	    	SharedPreferences settings = getPreferences(0);
-	    	settings.edit().putBoolean("registered", true);
-	    	settings.edit().putString("name", name);
-	    	settings.edit().putString("number", number);
+	    	settings.edit().putBoolean("registered", true).commit();
+	    	settings.edit().putString("name", name).commit();
+	    	settings.edit().putString("number", number).commit();
 	    	
 	    	
 	        super.onPostExecute(result);
@@ -173,7 +173,7 @@ public class Dashboard extends Activity {
 	    protected void onPostExecute(String result) {
 	    	
 	    	SharedPreferences settings = getPreferences(0);
-	    	settings.edit().putString("groups", result);
+	    	settings.edit().putString("groups", result).commit();
 	    	int length;
 	    	try {
 				JSONArray json = new JSONArray(result);
@@ -207,9 +207,9 @@ public class Dashboard extends Activity {
 		//setContentView(R.layout.main);
 
 		Button mButton=(Button)findViewById(R.id.Join_Button);
-		mButton.setBackgroundColor(Color.parseColor("#E7C00A")); // custom color
+		mButton.setBackgroundColor(Color.parseColor("#F7D01A")); // custom color
 		
-		Intent intent = new Intent(this,Join_Group.class);
+		Intent intent = new Intent(this,Group_Viewer.class);
 		startActivity(intent);
 	}
 	
@@ -217,9 +217,9 @@ public class Dashboard extends Activity {
 		//setContentView(R.layout.main);
 
 		Button mButton=(Button)findViewById(R.id.Start_Button);
-		mButton.setBackgroundColor(Color.parseColor("#E7C00A")); // custom color
+		mButton.setBackgroundColor(Color.parseColor("#F7D01A")); // custom color
 		
-		Intent intent = new Intent(this,Create_Group.class);
+		Intent intent = new Intent(this,Group_Viewer.class);
 		startActivity(intent);
 	}
 		
