@@ -41,8 +41,7 @@ public class Dashboard extends Activity {
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_dashboard);		
+		
 	
 		SharedPreferences settings = getPreferences(0);
 		if (!settings.getBoolean("registered", false)) {
@@ -54,6 +53,9 @@ public class Dashboard extends Activity {
 			new RequestTask().execute("");
 			new QueryTask().execute("");
 		}
+		
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_dashboard);		
 		
 	}
 	
@@ -172,21 +174,26 @@ public class Dashboard extends Activity {
 	    	
 	    	SharedPreferences settings = getPreferences(0);
 	    	settings.edit().putString("groups", result);
-	    	
+	    	int length;
 	    	try {
 				JSONArray json = new JSONArray(result);
-				Log.v("json",json.length());
-				
+				Log.v("json",json.length()+"");
+				length = json.length();
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}
 	    	
 	    	
-	    	
+	    	jump_to_viewer();
 	    	
 	        super.onPostExecute(result);
 	        //Do anything with response..
 	    }
+	}
+	
+	public void jump_to_viewer() {
+		Intent intent = new Intent(this,Group_Viewer.class);
+		startActivity(intent);
 	}
 	
 	@Override
