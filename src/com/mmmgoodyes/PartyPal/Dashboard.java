@@ -42,13 +42,14 @@ public class Dashboard extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		
+		Intent intent = getIntent();
+		name = intent.getStringExtra("name");
+		number = intent.getStringExtra("number");
 	
+		
 		SharedPreferences settings = getPreferences(0);
 		if (!settings.getBoolean("registered", false)) {
 		
-			Intent intent = getIntent();
-			name = intent.getStringExtra("name");
-			number = intent.getStringExtra("number");
 		
 			new RequestTask().execute("");
 			new QueryTask().execute("");
@@ -209,7 +210,14 @@ public class Dashboard extends Activity {
 		Button mButton=(Button)findViewById(R.id.Join_Button);
 		mButton.setBackgroundColor(Color.parseColor("#F7D01A")); // custom color
 		
+		String groupname = ((EditText)findViewById(R.id.Group_Name)).getText().toString();
+		
 		Intent intent = new Intent(this,Group_Viewer.class);
+		
+		intent.putExtra("GroupName", groupname);
+		intent.putExtra("Name", name);
+		intent.putExtra("Number", number);
+
 		startActivity(intent);
 	}
 	
@@ -219,7 +227,13 @@ public class Dashboard extends Activity {
 		Button mButton=(Button)findViewById(R.id.Start_Button);
 		mButton.setBackgroundColor(Color.parseColor("#F7D01A")); // custom color
 		
+		String groupname = ((EditText)findViewById(R.id.Group_Name)).getText().toString();
+		
 		Intent intent = new Intent(this,Group_Viewer.class);
+		
+		intent.putExtra("GroupName", groupname);
+		intent.putExtra("Name", name);
+		intent.putExtra("Number", number);
 		startActivity(intent);
 	}
 		

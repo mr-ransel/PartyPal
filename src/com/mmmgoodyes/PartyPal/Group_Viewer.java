@@ -39,6 +39,7 @@ public class Group_Viewer extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_group__viewer);
+		number = "9416856455";
 		
 		SharedPreferences settings = getPreferences(0);
 		if (!settings.getBoolean("registered", false)) {
@@ -48,6 +49,15 @@ public class Group_Viewer extends Activity {
 			name = settings.getString("name", "");
 			number = settings.getString("number", "");
 		}
+		
+		groupindex = 0;
+		Intent in = getIntent();
+		String gn = in.getStringExtra("GroupName");
+		number = in.getStringExtra("Number");
+		name = in.getStringExtra("Name");
+		new AsyncGroupAdder().execute(gn);
+		
+		
 		groups = new ArrayList<String>();
 		try {
 			JSONArray json = new JSONArray(settings.getString("groups", "[]"));
@@ -63,7 +73,7 @@ public class Group_Viewer extends Activity {
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
-		groupindex = 0;
+		
 		
 	}
 
@@ -74,6 +84,62 @@ public class Group_Viewer extends Activity {
 		return true;
 	}
 
+	class AsyncGroupAdder extends AsyncTask<String, String, String>{
+	    @Override
+	    protected String doInBackground(String... group) {
+	    	
+	    	JSONObject data = new JSONObject();
+	    	try {
+	    		data.put("action","add_groupmember");
+				data.put("phonenumbers", new JSONArray().put(number));
+				data.put("groupphrase",group[0]);
+			} catch (JSONException e1) {
+				e1.printStackTrace();
+			}
+	    	String json_string = data.toString();
+	    	Log.v("json",json_string);
+	    	
+	        HttpClient httpclient = new DefaultHttpClient();
+	        HttpPost post = new HttpPost(getResources().getString(R.string.request_URL));
+	        HttpResponse response;
+	        String responseString = null;
+	        try {
+	        	List<NameValuePair> nvpairs = new ArrayList<NameValuePair>(1);
+	        	nvpairs.add(new BasicNameValuePair("json",json_string));
+	        	
+	        	post.setEntity(new UrlEncodedFormEntity(nvpairs));
+	        	
+	            response = httpclient.execute(post);
+	            
+	            StatusLine statusLine = response.getStatusLine();
+	            if(statusLine.getStatusCode() == HttpStatus.SC_OK){
+	            	
+	                ByteArrayOutputStream out = new ByteArrayOutputStream();
+	                response.getEntity().writeTo(out);
+	                out.close();
+	                Log.v("http response",out.toString());
+	            } else{
+	                //Closes the connection.
+	            	Log.v("http response failed",response.toString());
+	                response.getEntity().getContent().close();
+	                
+	            }
+	        } catch (ClientProtocolException e) {
+	            //nope
+	        } catch (IOException e) {
+	            //nuh uh
+	        }
+	        return responseString;
+	    }
+	    
+	    @Override
+	    protected void onPostExecute(String result) {
+	    	
+	        super.onPostExecute(result);
+	        //Do anything with response..
+	    }
+	}
+	
 	class QueryTask extends AsyncTask<String, String, String>{
 	    @Override
 	    protected String doInBackground(String... index) {
